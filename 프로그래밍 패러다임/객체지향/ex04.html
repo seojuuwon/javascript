@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체지향 프로그래밍
+        class 자판기{
+            // 객체를 생성하고 초기 데이터(변수)를 지정
+            constructor(water, coke, juice){
+                this.money = 0
+                this.menu = 0
+                this.water = water
+                this.coke = coke
+                this.juice = juice
+            }
+            inputMoney(){
+                this.money = parseInt(prompt('돈을 넣어주세요!')) // 내 자판기 안에 변수를 받겠다 -> this
+            }
+            inputMenu(){
+                this.menu = parseInt(prompt('무엇을 드시겠습니까? [1]물-700원 [2]콜라-1500원 [3]주스-2000원'))
+            }
+            exportProduct(){
+                if(this.menu == 1){
+                    this.water -= 1 // 물 수량 감소
+                    this.money -= 700 // 물 금액만큼 돈 감소
+                    alert("물이 나왔습니다!!")
+                }else if(this.menu == 2){
+                    this.coke -= 1 // 콜라 수량 감소
+                    this.money -= 1500 // 콜라 금액만큼 돈 감소
+                    alert("콜라가 나왔습니다!!")
+                }else if(this.menu == 3){
+                    this.juice -= 1 // 주스 수량 감소
+                    this.money -= 2000 // 주스 금액만큼 돈 감소
+                    alert("주스가 나왔습니다!!")
+                }
+            }
+            changeMoney(){
+                let won1000 = parseInt(this.money / 1000)
+                let won500 = parseInt(this.money % 1000 / 500)
+                let won100 = parseInt(this.money % 1000 % 500 / 100)
+                alert(`1000원 ${won1000}개 500원 ${won500}개 100원 ${won100}개`)                
+            }
+        }
+
+        const 자판기1 = new 자판기(5, 10, 3)
+        자판기1.inputMoney()
+        자판기1.inputMenu()
+        자판기1.exportProduct()
+        자판기1.changeMoney()
+        
+        const 자판기2 = new 자판기(20, 5, 10)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 입장료 할인 프로그램을 만들어보자.
+        // 조건 1. 나이가 60세 이상 이거나 8세 미만인 경우 -> 10% 할인
+        // 조건 2. 공휴일이면 10% 할인
+        // 조건 3. 단체 20인 이상이면 5% 할인
+
+        let ticketPrice = 20000;
+        let age = parseInt(prompt("나이 입력"));
+        let holiday = confirm("공휴일 여부");
+        let group = confirm("단체 20인 이상 여부");
+        let discount = 0.0; // 할인 누적
+
+        if (age >= 60 || age < 8) {
+            discount += 0.1;
+        }
+
+        if (holiday == true) {
+            discount += 0.1;
+        }
+
+        if (group == true) {
+            discount += 0.05;
+        }
+
+        console.log(`입장료 : ${ticketPrice * (1-discount)}`)
+
+        // 내 답
+        // if ((age >= 60 || age < 8) && group == true && holiday == true) {
+        //     console.log('입장료 : ', ticketPrice * 0.75);
+        // } else if ((age >= 60 || age < 8) && group == true) {
+        //     console.log('입장료 : ', ticketPrice * 0.85);
+        // } else if ((age >= 60 || age < 8) && holiday == true) {
+        //     console.log('입장료 : ', ticketPrice * 0.85);
+        // } else if (group == true && holiday == true) {
+        //     console.log('입장료 : ', ticketPrice * 0.75);
+        // } else if (holiday == true) {
+        //     console.log('입장료 : ', ticketPrice * 0.9);
+        // } else if (age >= 60 || age < 8) {
+        //     console.log('입장료 : ', ticketPrice * 0.9);
+        // } else if (group == true){
+        //     console.log('입장료 : ', ticketPrice * 0.95);
+        // } else {
+        //     console.log('입장료 : ', ticketPrice=);
+        // }
+    </script>
+</body>
+</html>

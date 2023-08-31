@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 코딩컨벤션 : 코딩 규칙, 코드 스타일, 팀 by, 회사 by 다르다
+        // 사람들이 많이 쓰는 표준을 지키되, 본인만의 스타일을 구축해도 된다.
+        // 1. 세미콜론 규칙 : 문장의 끝에는 세미콜론을 넣어라
+        // 2. 문장작성시 중간에 띄어쓰기를 넣어서 가독성을 확보해라
+        // 3. 한줄에 하나의 코드만 작성하는 것을 추천
+        // 4. 변수명 짓기
+        // - 키워드를 사용하지 말 것
+        // - 카멜케이스, 파스칼케이스, 스네이크케이스
+        // - getAge, GetAge, get_age
+        // 5. 들여쓰기 잘하기 -> 코드의 가독성 증가
+
+        // 변수 : 데이터를 담을 수 있는 공간
+        // 컴퓨터의 메모리에 공간을 할당하고 식별자를 통해서 접근
+        // (선언 및 초기화)
+
+        // 1. var
+        var age = 10;
+        var name = "서주원";
+        console.log("age : ", age);
+        console.log("name : ", name);
+
+        // ES6 문법에서 등장한 키워드
+        // 2. let -> 재선언 불가능
+        let color = "red";
+        // let color = "yellow";
+        console.log(color)
+
+        // 3. const -> 상수
+        const PI = 3.14;
+        // const PI = 11111; // -> 재선언 불가능
+        // PI = 111; // -> 재할당 불가능
+
+        // 호이스팅 : 사전적의미로는 끌어올리다.
+        // 변수 선언이나 함수 선언처럼 선언하는 문장에서 발생
+        // 하단에서 선언된 변수, 함수들을 선언문장 위에서 인지하는 현상
+        // (위에서 선언하고 아래에서 쓰는게 좋)
+        console.log(address);
+        var address = "광주광역시";
+
+        // let 호이스팅 -> 사용하지 못하도록 error 발생
+        // TDZ(Temporal Death Zone)에 let변수 등록
+        console.log(address2);
+        let address2 = "동구";
+
+        // 함수 호이스팅
+        a(1,2)
+
+        function a(num1, num2){
+            console.log(num1, num2);
+        }
+    </script>
+</body>
+</html>

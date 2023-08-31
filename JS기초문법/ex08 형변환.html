@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 형변환
+        // 자료형태를 변환하는 것
+
+        let textFloat = "300abc500";
+
+        // 숫자로 변환
+        // 문자열 숫자를 정수형태로 변환
+        let num1 = parseInt(textFloat);
+        console.log(num1);
+
+        let num2 = parseFloat(textFloat);
+        console.log(num2);
+
+        // Number -> 숫자가 아닌게 있으면 변환 불가능
+        let num3 = Number(textFloat);
+        console.log(num3);
+
+        // 숫자 -> 문자
+        // to.String -> 진법 변환이 가능
+        let number = 100;
+        console.log(number.toString() === 100);
+        console.log(number.toString(2)); // 2진법
+        console.log(number.toString(16));
+        
+        // 진법 말고 그냥 문자열로 바꾸고 싶으면 vv
+        console.log(String(number));
+    </script>
+</body>
+</html>

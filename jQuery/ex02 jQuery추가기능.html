@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN 방식으로 압축되지 않은 버전 jquery라이브러리 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <style>
+        .newClass{
+            color : red;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"></div>
+        <span>base</span>
+    <button id="append">append</button>
+    <button id="prepend">prepend</button>
+    
+    <button id="after">after</button>
+    <button id="before">before</button>
+
+    <button id="remove">remove</button>
+    <button id="empty">empty</button>
+
+    <button id="addClass">addClass</button>
+    <button id="removeClass">removeClass</button>
+    <script>
+        // 1. HTML Element 추가하기
+        // 자식요소로 앞에 추가댐
+        $('#append').click(()=>{
+            // html은 갈아끼우는거, append는 추가하는거
+            $('#area').append("<span>hello</span>")
+
+        })
+        $('#prepend').click(()=>{
+            // prepend 뒤로 추가? 이거 맞남
+            $('#area').prepend("<span>hello</span>")
+
+        })
+        // 형제 성격으로 뒤쪽 추가
+        $('#after').click(()=>{
+            $('#area').after("<p>after</p>")
+
+        })
+        // 형제 어쩌구로 앞쪽에 추가
+        $('#before').click(()=>{
+            $('#area').before("<p>before</p>")
+
+        })
+
+        // 2. HTML Element 삭제하기
+        $('#remove').click(()=>{
+            $('#area').remove()
+
+        })
+        $('#empty').click(()=>{
+            $('#area').empty()
+
+        })
+
+        // 3. class 추가 / 삭제
+        $('#addClass').click(()=>{
+            $('#area').addClass('newClass')
+
+        })
+        $('#removeClass').click(()=>{
+            $('#area').removeClass('newClass')
+
+        })
+
+        // 4. 부모/자식 요소 접근
+        let p = $('#area > span').parent()
+        console.log(p)
+
+        let c = $('#area').children()
+        console.log(c)
+    </script>
+</body>
+</html>

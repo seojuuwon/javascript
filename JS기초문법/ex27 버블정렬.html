@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 버블정렬
+        // 코드 리팩토링
+
+        let arr = [6, 19, 11, 50, 4];
+
+        // 앞 i : 0 1 2 3
+        // 뒤 i+1 : 1 2 3 4
+        // 1 step
+
+        for(let j=arr.length-2; j>=0; j--){ // j : 3 2 1 0
+            for(let i=0; i<=j; i++){
+                if (arr[i] > arr[i+1]){ // 앞에 있는 수가 더 클 때 교체
+                // 치환
+                let temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp
+                }
+                console.log(arr);
+            }
+            console.log("===========================");
+        }
+
+    </script>
+</body>
+</html>

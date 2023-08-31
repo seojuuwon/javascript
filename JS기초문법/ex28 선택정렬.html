@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 선택정렬
+        // 1. 기준값을 지정
+        // 2. 나머지 요소와 비교하면서 적절한 값 찾기(탐색)
+        // 3. 적절한 값을 기준 위치에 할당
+        let arr = [71, 39, 58, 99, 12];
+
+        // 기준 인덱스 : 0 1 2 3 -> j
+        // 비교 시작 인덱스 : 1 2 3 4 -> j+1
+
+        // 1 step - 0번째에 어울리는 값
+        
+        for (let j=0; j<=arr.length-2; j++){
+            let base = arr[j];
+
+            for (let i=j+1; i<=arr.length-1; i++){
+                if (base > arr[i]) {
+                    let temp = base;
+                    base = arr[i];
+                    arr[i] = temp;
+
+                }
+            }
+            arr[j] = base; // base = 가장 작은 값 찾은거 0번째에 넣어주기
+            console.log(arr);
+        }
+
+
+    </script>
+</body>
+</html>

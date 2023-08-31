@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>끝말잇기 해봐요</h1>
+        <p class="qustion">시작</p>
+        <input id="inputText" type="text" onkeyup=enterkey()/>
+        <p class="result">입력해봐요</p>
+    </div>
+
+    <script>
+        function enterkey() {
+            let input = document.getElementById('inputText').value;
+            let word = '시작';
+
+            if (window.event.keyCode == 13){
+                if (input[0] == word[word.length - 1]) {
+                    document.write('정답!!!');
+                } else if (input.innerText == ' ') {
+                    document.write('제대로 입력하세용');
+                } else {
+                    document.write('땡!!');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

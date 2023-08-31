@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식으로 압축되지 않은 버전 jquery라이브러리 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <span id="cnt">0</span>
+    <br>
+    <button id="plus">+</button> <button id="minus">-</button>
+    <button id="plus2">+2</button>
+
+
+    <script>
+        // jQuery를 이용해서 숫자를 증감하는 프로그램을 만들자.
+        // 단, 음수 이하로 내려가지 않도록 제어
+
+
+        // 함수 재활용하기
+        let cnt = $('#cnt');
+
+        const op = (userValue) => {
+            let num = parseInt(cnt.text());
+            if(num+userValue >= 0){
+                cnt.text(num+userValue);
+            }
+
+        }
+
+        $('#plus').click(()=>{op(1)})
+        $('#minus').click(()=>{op(-1)})
+        $('#plus2').click(()=>{op(2)})
+        
+        // $('#plus').click(()=>{ // 
+        //     let num = parseInt(cnt.text());
+        //     cnt.text(num+1);
+        // })
+
+        // $('#minus').click(()=>{
+        //     let num = parseInt(cnt.text());
+        //     if(num > 0){ // 음수로 내려가지 않도록 제어
+        //         cnt.text(num-1);
+        //     }
+        // })
+
+    </script>
+</body>
+</html>

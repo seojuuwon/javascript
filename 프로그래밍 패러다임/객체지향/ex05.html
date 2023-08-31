@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vm.js"></script>
+    <script src="./lang.js"></script>
+</head>
+<body>
+    <script>
+        // 자판기 프로그램을 해외에서도 사용할 수 있도록
+        // 유연한 프로그램으로 구졸르 변경해보자
+        // 언어라는 클래스를 새롭게 정의
+
+        const 한국어obj = new 한국어()     // 한국어라는 객체를 하나 만듦
+        const 영어obj = new 영어()
+        const 자판기1 = new 자판기(5, 10, 3, 영어obj)
+        자판기1.inputMoney()
+        자판기1.inputMenu()
+        자판기1.exportProduct()
+        자판기1.changeMoney()
+    </script>
+</body>
+</html>

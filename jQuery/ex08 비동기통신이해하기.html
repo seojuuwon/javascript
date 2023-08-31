@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN 방식으로 압축되지 않은 버전 jquery라이브러리 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        // 1. 동기통신
+        // - 서버의 요청과 응답이 순차적으로 일어난다.
+        // - 서버로부터 응답이 도착하지 않으면 다음 요청을 하지 x
+
+        // 2. 비동기통신
+        // - 서버의 요청에 따른 응답의 순서가 일정하지 않다.
+        // - 서버의 요청에 따라 응답이 도착하지 않아도 다음 요청이 가능하다.
+
+        // 3. 비동기 장점
+        // - 데이터를 위한 요청을 동시에 여러 곳에 보낼 수 있다.
+        // - 오는 순서대로 데이터를 화면에 표기하여 사용자의 편의 증가
+        //   (딜레이 속도 x, 사용자의 입장에서 동시에 여러 작업이 가능)
+
+        // 4. 비동기 단점
+        // - 여러개 요청에 대한 응답시 순서를 보장하지 않기 때문에
+        //   의도치 않은 순서로 프로그램이 실행될 수 있음
+        // - 요청에 대한 부하가 늘어날 수 있음
+        // (먼저 응답순서가 중요한 프로그램인지 확인해야댐)
+
+        // 비동기 통신 실습
+        // 1. jquery에 구현된 함수활용
+        let date = '20230624'
+        let url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=${date}&itemPerPage=5`
+        
+        
+
+        const getDataAjax = () => {
+            $.ajax({
+                url : url, // 요청할 주소
+                type : 'get', // 요청방식(get, post)
+                success : (res)=>{ // 서버로부터 응답이 성공
+                    console.log('응답성공')
+                    console.log(res.boxOfficeResult.dailyBoxOfficeList[0].movieNm)
+                    
+                    let movieObjs = res.boxOfficeResult.dailyBoxOfficeList
+                    
+                    movieObjs.forEach(element => {
+                        console.log(element.movieNm) // 콘솔에 출력
+                        $('#result').append(`<p>${element.movieNm}</p>`) // 화면에 출력
+                    });
+                },
+                error : ()=>{ // 서버로부터 응답이 실패
+                    console.log('응답실패')
+                }
+            })
+        }
+
+        getDataAjax()
+        console.log('ajax 호출') // 동기통신이면 함수가 먼저 출력되고 ajax 호출이 나와야하는데
+        // 비동기 처리 방식이라서 ajax 호출이 먼저 출력됨
+    </script>
+</body>
+</html>

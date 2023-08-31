@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 단어를 저장할 배열
+        let word = ["복세편살", "오놀아놈", "별다줄", "무느알"];
+        // 단어의 뜻을 저장할 배열
+        let mean = ["복잡한 세상 편하게 살자",
+                    "오~! 놀 줄 아는 놈인가?",
+                    " 별 걸 다 줄인다.",
+                    "무슨 느낌인지 알지?"];
+
+        while(true) {
+            let menu = prompt("1.검색 2.등록 3.삭제 4.종료");
+
+
+            if(menu == 1){
+                let search = prompt("궁금한 단어를 입력해주세요");
+                let isCheck = true;
+
+                for(let i = 0; i < word.length; i++){
+                if(search === word[i]){
+                    alert(word[i]+"-"+mean[i]);
+                    isCheck = false;
+                    break;
+                }
+
+                }
+                if(isCheck){
+                alert("해당되는 단어는 존재하지 않습니다.");
+                }
+
+
+            } else if (menu == 2){
+
+                let inputWord = prompt("단어 입력");
+                let inputMean = prompt("뜻 입력");
+
+                word.push(inputWord);
+                mean.push(inputMean);
+
+            } else if (menu == 3) {
+
+                // let removeWord = prompt("삭제할 단어 입력");
+
+                // for (i = 0; i < word.length; i++){
+                //     if (removeWord == word[i]){
+                //         word.splice(i,1);
+                //         mean.splice(i,1);
+                //     }
+                // }
+
+
+                // 함수 사용
+                let remIdx = word.indexOf(removeWord);
+
+                if(remIdx != -1){
+                    word.splice(remIdx, 1);
+                    mean.splice(remIdx, 1);
+                }
+                
+            } else if(menu == 4) {
+                alert("검색을 종료합니다.");
+                break;
+            }
+        }
+        
+        
+
+
+        // let isCheck = true;
+
+        // // alert로 답을 알려주는데 
+        // // 복세편살
+        // // 복세편살 : 복잡한 세상 편하게 살자
+        // // 만약에 없는 단어를 입력시에 -> 해당 단어는 존재하지 않습니다.
+
+        // // 시퀀ㅅㅕㄹ서치
+        // for (let i=0; i < word.length; i++){
+        //     if (search === word[i]){
+        //         alert(word[i] + " : " + mean[i]);
+        //         isCheck = false;
+        //         break;
+        //     }
+            
+        //     // 첫번째 방법.
+        //     // if (i == 3) {
+        //     //     alert("해당 단어는 존재하지 않습니다.");
+        //     // }
+        
+        // }
+
+        // if(isCheck) {
+        //     alert("해당 단어는 존재하지 않습니다.");
+        // }
+
+    </script>
+</body>
+</html>

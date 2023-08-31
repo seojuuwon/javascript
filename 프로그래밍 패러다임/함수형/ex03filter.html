@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // filter -> 데이터를 걸러내는 함수
+        const nums = [8, 91, 11, 45, 22, 4]
+
+        // 짝수 걸러내고 홀수 출력
+        const oddNums = nums.filter(item => item % 2 == 1)
+        console.log(oddNums)
+
+        // 값이 10미만인 데이터의 값을 2배로 늘려서 반환
+        let Nums = nums.filter(item => item < 10)
+        Nums = Nums.map(item => item * 2)
+        console.log(Nums)
+
+        // 선생님 답
+        let rs = nums.filter(item => item < 10)
+                     .map(item => item * 2)
+        console.log(rs)
+
+        // 각 사람별 BMI를 구하고 BMI지수가 20이 넘는 사람의 정보만 추출
+        const data = [
+            {name : "홍길동", weight : 70, height : 170},
+            {name : "김아라", weight : 50, height : 165},
+            {name : "사만다", weight : 43, height : 180},
+        ]
+
+        // let BMIdata = data.map(item => item['weight'] / ((item['height']/100) ^ 2))
+        //                   .filter(item => item >= 20)
+        // console.log(BMIdata)
+
+        let rs2 = data.map(item => {
+            return {
+                ...item,
+                BMI : item['weight'] / ((item['height']/100) ^ 2)
+            }
+        }).filter(item => item['BMI'] >= 20)
+        console.log(rs2)
+    </script>
+</body>
+</html>

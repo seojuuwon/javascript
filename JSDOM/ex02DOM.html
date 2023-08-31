@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>아래 버튼을 클릭하면 이 텍스트의 색깔과 크기가 변해요!</h1>
+    <button onclick="btnClick">클릭</button>
+    
+     <script>
+        let btn = document.querySelector("button");
+        let h1 = document.querySelector("h1");
+        
+        //btn.addEventListener('click', function(){
+        //    h1.style.fontSize="25px"
+        //    h1.style.color="tomato"
+        //})
+
+        function btnClick(){
+            h1.style.fontSize="25px"
+            h1.style.color="tomato"
+        }
+    </script>
+</body>
+</html>

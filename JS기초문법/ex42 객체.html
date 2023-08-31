@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체 -> 표현하고싶은 사물(데이터) 코드로 표현한 것
+        let name = '주원';
+        let age = '24';
+        // 종류, 전화번호, 문자 보내기, 전화하기
+        function sendMessage(){
+
+        }
+        let array = ["갤럭시", "00000000", sendMessage];
+        console.log(array[0]);
+        // () --> 객체 의미
+        // 객체에 데이터를 담아줄 때는 key-value 형태로 담아줄 수 있다.
+        let phone = {
+            kind : "갤럭시", // -> 객체의 필드값
+            number : "01012345678",
+            send : function(){
+                // this -> 객체자신을 의미!
+                console.log(this.number + "에게 메세지를 보내다.");
+            }
+            // call : function(){
+            //     console.log("전화 걸기 기능");
+            // }
+        }
+
+
+        // 객체 안에 있는 데이터를 꺼낼 때는 객체명.key
+        // === 객체명['key값']
+        console.log(phone.kind);
+        // == console.log(phone['kind']);
+        console.log(phone.number);
+        phone.send(); // 함수 호출할 때는 괄호 꼭 적기
+
+        //phone에 call이라는 key값으로 '전화걸기 기능'을 추가하고 싶습니다.
+        phone.call = function (){
+            console.log("전화걸기");
+        }
+        // phone.call()
+        phone['call']()
+
+    </script>
+</body>
+</html>

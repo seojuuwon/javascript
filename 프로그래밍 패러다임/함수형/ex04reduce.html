@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // reduce -> 이전데이터와 현재데이터를 이용해 좀 더 복잡한 구조를 만들 때 활용
+
+        const arr = [1, 2, 3, 4, 5]
+
+        // pre 이전값, curr 현재값
+        arr.reduce((pre, curr) => {
+            console.log("pre : " + pre)
+            console.log("curr : " + curr)
+            return curr
+        }, 0)   // 0은 초기값. 0번부터 시작함. 이전값(pre)이 0이다
+
+        const sumRs = arr.reduce((pre, curr) => {
+            return pre + curr
+        })
+        console.log("sum : " + sumRs)
+    </script>
+</body>
+</html>

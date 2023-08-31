@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "number">0</h1>
+    <button onclick='plus()'>+1 증가</button>
+    <button onclick='minus()'>-1 감소</button>
+    
+    <script>
+        let number = document.getElementById("number")
+
+        const plus = () => {
+            let num = parseInt(number.innerText)+1
+            number.innerText = num
+        }
+        
+
+        const minus = () => {
+            // document.querySelector("h1").innerText
+            if(number.innerText > 0){ // 0이면 감소할 수 없게 만들기
+                let num = number.innerText
+                num--;
+                // let num = document.getElementById("number").innerText -1 --> 윗줄이랑 같은 거임
+                number.innerText = num
+
+            }
+            
+        }
+    </script>
+</body>
+</html>

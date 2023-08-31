@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 삼항연산자
+        // // true or false 따라 단순한 값을 제어
+        // // 조건식 ? true일 때 반환 : false일 때 반환
+        // let num1 = 1000;
+        // let num2 = 100;
+
+        // let result = num1 > num2 ? "num1이 더 크다" : "num2가 더 크다";
+        // console.log(result);
+
+        // 실습
+        // 농구공의 개수를 입력받는다. 
+        // 과연 철수는 농구공을 담기 위해 몇개의 상자가 필요할까?
+
+        // 농구공 상자 한개에는 최대 5개의 농구공을 담을 수 있다.
+        // 30개 입력시 필요한 상자는 6개
+        // 33개 입력 시 -> 7개
+        // 단, 농구공이 상자에 담기지 않고 남는 농구공은 없어야한다.
+
+        let ball = prompt("농구공의 수 입력");
+        let box = ball % 5 == 0 ? ball / 5 : parseInt(ball / 5 + 1);
+        
+        alert("필요한 박스의 개수는 " + box + "개");
+        console.log(box +"개");
+
+    </script>
+</body>
+</html>

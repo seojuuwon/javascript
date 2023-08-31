@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 절차지향
+        // 자판기 만들기
+        // 돈 입력 -> 메뉴선택 -> 제품받기 -> 잔돈받기
+
+        // 자판기에 저장할 데이터
+        let data = {
+            money : 0,
+            water : 5,
+            coke : 10,
+            juice : 7
+        }
+
+        data.money = parseInt(prompt('돈을 넣어주세요!'))
+        let menu = parseInt(prompt('무엇을 드시겠습니까? [1]물-700원 [2]콜라-1500원 [3]주스-2000원'))
+
+        // 제품받기
+        // alert으로 메뉴번호에 따라 제품 출력
+        // money 및 선택제품 수량 변경
+        if (menu == 1){
+            alert('물이 나왔습니다.')
+            data.water -= 1
+            data.money -= 700
+        } else if (menu == 2){
+            alert('콜라가 나왔습니다.')
+            data.coke -= 1
+            data.money -= 1500
+        } else if(menu == 3){
+            alert('주스가 나왔습니다.')
+            data.juice -= 1
+            data.money -= 2000
+        }
+
+
+        // 잔돈받기
+        // alert으로 1000원 몇개 500원 몇개 100원 몇개 출력
+        let m1 = parseInt(data.money / 1000)
+        let m2 = parseInt(data.money % 1000 / 500)
+        let m3 = parseInt(data.money % 1000 % 500 / 100)
+        alert(`1000원 ${m1}개, 500원 ${m2}개, 100원 ${m3}개`)
+
+    </script>
+</body>
+</html>

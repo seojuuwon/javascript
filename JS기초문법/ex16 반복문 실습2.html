@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            padding: 0 20px 30px 29px;
+            margin: 15px;
+            border : 1px solid #ccc;
+            line-height: 2;
+        }
+
+        div h3 {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 구구단
+
+        // - 출력 예시 -
+        // 2단 <- h3 태그
+        // 2 x 1 = 2
+        // ...
+        // 2 x 9 = 18
+
+        // 2-9단까지 나오게 하기
+        for (let i = 2; i <= 9; i++) {
+            document.write("<div>");
+            document.write("<h3>" + i + "&nbsp;단 </h3>"); // &nbsp; HTML 띄어쓰기
+            for (let j = 1; j <= 9; j++){
+                document.write(i + " x " + j + " = " + i*j + "<br>");
+            }
+            document.write("</div>");
+        }
+
+    </script>
+</body>
+</html>

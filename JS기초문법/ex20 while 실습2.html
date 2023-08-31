@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 랜덤값 생성 -> Math.random() 
+        // 0부터 1미만의 수 중 랜덤한 값을 가져옴
+        // 0.aa ~ 0.9aaa
+        // Math.random()*10
+        // parseInt(0.aaa ~ 9.aaaa) --> 0 ~ 9까지
+        // parseInt(0.aaa ~ 9.aaaa) +1
+        // --> 1~10 정수
+
+        // 1 ~ 10보다 작은 정수
+        // 10보다 작은 랜덤 값을 가져오고 싶어요!
+        // parseInt(0.123546) --> 0
+        // parseInt(3.123546) --> 3
+        // parseInt(4.123546) --> 4
+
+        let num = parseInt(Math.random()*10)+1;
+        console.log(num);
+
+        // 실습
+        // 랜덤으로 생성된 숫자를 맞추는 Updown 페이지입니다.
+        // 랜덤 값 : 1 ~ 20
+
+        // 컴퓨터야 너가 어떤 랜덤한 숫자를 만들고 내가 숫자를 입력할거야
+        // 만약 내가 입력한 숫자가 너가 만든 랜덤한 숫자보다 작다면 
+        // '입력한 숫자보다 큰 숫자를 입력해주세요' 출력
+        // 만약 내가 입력한 숫자가 너가 만든 랜덤한 숫자보다 크다면
+        // '입력한 숫자보다 작은 숫자를 입력해주세요' 출력
+        
+        // 위의 내용이 내가 정답을 맞출 때까지 반복해줘
+        // 만약 정답을 맞췄다면 '정답입니다.' 출력
+
+
+        let randomNum = parseInt(Math.random()*20)+1;
+
+        while (true) {
+            let num = parseInt(prompt('숫자를 입력해주세요'));
+            if (randomNum > num) {
+                alert("입력한 숫자보다 큰 수 입니다.");
+            } else if (randomNum < num) {
+                alert("입력한 숫자보다 작은 수 입니다.");
+            } else if(randomNum == num) {
+                alert("정답입니다! 축하!");
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>

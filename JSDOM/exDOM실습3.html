@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>input값으로 사진 띄우기</h1>
+    <input>
+    <button onclick="clickImg()">이미지띄우기</button>
+    <img id="Img" src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3cgNsYzXg3m9hd49O6bNx-p3A2GQ8csZZYQ&usqp=CAU">
+    
+    <script>
+        // 1. input태그에 바꾸고 싶은 이미지 주소 입력
+        // 2. 버튼 클릭 시 이미지 변경
+
+        const clickImg = () => {
+            let cImg = document.querySelector('input').value
+            document.querySelector('img').src = cImg
+            
+        }
+    </script>
+</body>
+</html>

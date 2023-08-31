@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let person = {
+            gender : "남자",
+            address : "광주",
+            favMovies : "어벤져스, 캡틴마블",
+            favFood : "김치, 몬스터X버거",
+            // 객체 안에서 함수를 정의할 때는 함수 선언문(익명함수) 선호 --> this (객체)
+            // () => {} 화살표함수로 만들어 주게 되면 화살표 함수는 전역함수이다.
+            // 객체 밖을 바라보고 있다.
+            greeting  : function(){
+                console.log(`홍ㅇㅇ님의 나이는 25이고 성별은 ${this.gender}입니다.\n사는 곳은 ${this.address}이고 좋아하는 영화는 ${this.favMovies} 등이 있습니다.\n좋아하는 음식은 ${this.favFood}입니다.`);   
+            }
+        }
+        person.greeting();
+
+    </script>
+</body>
+</html>

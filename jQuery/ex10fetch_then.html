@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="movieList">
+        <tr>
+            <td>순위</td>
+            <td>영화명</td>
+            <td>개봉일</td>
+        </tr>
+    </table>
+    <br>
+    <button onclick="getMovies()">영화 데이터 가져오기</button>
+    <input id="myDay">
+    <script>
+        // 비동기 통신 방법 2. fetch_then : 바닐라 자바스크립트(순수 자바스크립트)로 사용가능하다.
+        // 1. 어디랑 통신할건지
+        // 2. 성공시 로직
+        // 3. 실패시 로직
+        const getMovies = () =>{
+            fetch('https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20230101')
+            .then((response)=>{ // 1. 첫번째 then (데이터 파서용)
+                
+                return response.json()
+            })
+            .then((data)=>{ // 2. 두번째 then (정제된 데이터 사용)
+                console.log(data)
+                let arrayMovie = data.boxOfficeresult.dailyBoxOfficeList
+                for(let i=0; i<arrayMovie.length; i++){
+                    let rank = res.boxOfficeResult.dailyBoxOfficeList[i].rank
+                    let movieNm = res.boxOfficeResult.dailyBoxOfficeList[i].movieNm
+                    let openDt = res.boxOfficeResult.dailyBoxOfficeList[i].openDt                
+                    
+                    // createElement ==> 요소 생성(태그생성)
+                    let tr = document.createElement("tr")
+                    let tdMovieRank = document.createElement("td")
+                    tdMovieRank.innerText = rank
+                    
+                    let tdMovieName = document.createElement("td")
+                    tdMovieName.innerText = movieNm
+                    
+                    let tdMovieOpen = document.createElement("td")
+                    tdMovieOpen.innerText = openDt
+
+                    // appendChild --> 자식노드로 추가하겠습니다.
+                    tr.appendChild(tdMovieRank)
+                    tr.appendChild(tdMovieName)
+                    tr.appendChild(tdMovieOpen)
+                    document.getElementById("movieList").appendChild(tr)
+
+                    // document.getElementById("movieList").innerHTML+=
+                    
+                    //     `<tr>
+                    //         <td>${rank}</td>
+                    //         <td>${movieNm}</td>
+                    //         <td>${openDt}</td>
+                    //     </tr>`
+                }
+            })
+            .catch(()=>{
+                console.log('통신실패')
+            })
+        }
+    </script>
+</body>
+</html>

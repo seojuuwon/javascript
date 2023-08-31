@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 출력
+        // 2. console.log 출력
+        console.log("hello word!!");
+        console.error("error!!"); //치명적인 문제가 있을 때
+        console.warn("warning!!"); // 구동하는 것에는 문제가 없지만 잠재적으로 문제가 잇을 때 (나중에라도 수정하라고)\
+
+        // 1-2 alert : 팝업창으로 출력
+        alert("hello word!!");
+
+        // 1-3 wirte : 문서 출력
+        document.write("<h1>hello word!!</h1>");
+
+        // 2. 입력
+        // 2-1 confirm : yes or no 선택
+        var result = confirm("진행하시겠습니까?");
+        console.log(result);
+
+        // 2-2 prompt : 사용자의 값 입력
+        var result2 = prompt("오늘 점심은 뭐먹?","메뉴입력");
+        console.log(result2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        let binarySearch = (array, target) => {
+            // binarySearch 함수는 매개변수 2개 (배열, 찾고자하는 수)
+            // 를 입력하면
+            // 숫자를 찾으면 해당 숫자가 위치하는 인덱스 번호를 알려준다.
+            // 해당 숫자를 못찾으면 -1을 반환
+
+
+            // 7 숫자 찾기
+            let start = 0; // 인덱스의 시작점
+            let end = array.length -1; // 인덱스의 마지막점
+            let mid = 0; // 가운데 인덱스 찾기
+
+            while (start <= end){ 
+                mid = parseInt((start + end) / 2);
+                if (target === array[mid]){ // 
+                    return mid;
+                } else {
+                    if (target > array[mid]){ 
+                        start = mid + 1;
+                    } else {
+                        end = mid - 1;
+                    }
+                } 
+            }
+            return -1;
+
+        }
+
+        let array = [1, 3, 7, 9, 10, 11, 22, 34, 57, 99];
+
+        let result1 = binarySearch(array, 7);
+        console.log(result1);
+
+        // binary search 알고리즘을 통해
+        // 내가 원하는 숫자가 몇번째 인덱스에 위치하는지 알아보자
+
+        // // 7 숫자 찾기
+        // let start = 0; // 인덱스의 시작점
+        // let end = array.length -1; // 인덱스의 마지막점
+        // let mid = 0; // 가운데 인덱스 찾기
+
+        // // 1회전 알고리즘
+        // mid = parseInt((start + end) / 2); // 가운데 값을 찾으려면 (처음+끝)/2
+        // // parseInt 쓴 이유 : Number은 소수점까지 나오기 때문에ㅔㅔ
+        
+        // if (7 === array[mid]){
+        //     console.log(mid)
+        // } else {
+        //     if(7 > array[mid]){
+        //         start = mid + 1;
+        //     } else {
+        //         end = mid -1;
+        //     }
+        // }
+
+        // while (start <= end){ 
+        //     mid = parseInt((start + end) / 2);
+        //     if (7 === array[mid]){ // 
+        //         console.log(mid);
+        //         break;
+        //     } else {
+        //         if (7 > array[mid]){ 
+        //             start = mid + 1;
+        //         } else {
+        //             end = mid - 1;
+        //         }
+        //     }
+            
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 소수 출력
+        // const checkPrimeNumber = (num) => {
+        //     result = [];
+        //     for(i = 1; i <= num; i++){
+        //         if(num % i == 0){
+        //             result.push(i);
+        //         }
+        //     }
+
+        //     if(result.length==2){
+        //         alert("소수입니다.")
+        //     } else {
+        //         alert("소수가 아닙니다.")
+        //     }
+        // }
+
+        // checkPrimeNumber(7);
+
+        // startValue ~ endValue까지의 숫자 중 소수를 출력하는 getPrimeNumber()메소드를 구현
+        let startNum = 2;
+        let endNum = 30;
+
+        const checkPrimeNumber = (sNum, eNum) => {
+            // sNum부터 eNum까지의 숫자들 중에 소수를 구해주세요!
+            let array = []; // 소수를 가지고 있을 배열
+            for (let i = sNum; i <= eNum; i++){
+                result = [];
+                for (let j = 1; j <= i; j++){
+                    if (i % j == 0){
+                        result.push(j); // i의 약수
+                    }
+                }
+                if(result.length==2){
+                    array.push(i);
+                }
+            }
+            console.log(`${sNum}부터 ${eNum}까지의 소수는 ${array}`)           
+    
+        }
+
+        checkPrimeNumber(startNum, endNum);
+
+    </script>
+</body>
+</html>

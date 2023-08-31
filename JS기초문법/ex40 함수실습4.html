@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 익명함수
+        // const getDivisor = function(num) {
+
+        // }
+
+        // 화살표 함수
+        // 배열 대신 문자열로 출력하는 방법
+        const getDivisor = (num) => {
+            let div = ""
+            // 약수를 전부 출력!
+            for(let i=1; i<=num; i++){
+                if(num%i==0){
+                    // console.log(i)
+                    div += i + " "
+                }
+            }
+            console.log(num + "의 약수 : " + div)
+        }
+
+        getDivisor(10);
+        getDivisor(16);
+        getDivisor(25);
+
+        // function getDivisor(num){
+        //     result = [];
+        //     for(i = 1; i <= num; i++){
+        //         if(num % i == 0){
+        //             result.push(i);
+        //         }
+        //     }
+        //     console.log(num + "의 약수 " + result);
+        // }
+    </script>
+</body>
+</html>

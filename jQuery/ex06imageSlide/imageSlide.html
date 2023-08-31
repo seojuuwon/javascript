@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/slideshow.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="container">
+            <img src="images/img1.png" id="img1">
+            <img src="images/img2.png" id="img2">
+            <img src="images/img3.png" id="img3">
+            <button id="prev">&lang;</button>
+            <button id="next">&rang;</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. 바닐라 js or jQuery 선택
+        // 2. 첫번째 이미지를 제외한 나머지 이미지를 display none
+        let img_tags = document.querySelectorAll('img')
+        let index = 0 // 기준인덱스
+        let count
+
+        
+        // forEach -> 배열의 처음부터 끝까지 접근하는 문법
+        // element 변수명
+        // element 변수에 자동으로 요소를 넣어준다.
+        img_tags.forEach(element => {
+            console.log(element) // 이미지태그 하나씩 접근
+            element.style.display = "none"
+        } )
+        img_tags[index].style.display = "block"
+
+        
+        // 3. 오른쪽 버튼 이벤트 등록 -> 현재위치를 기준으로
+        // 현재이미지 display none, 다음이미지 display block
+        let nextB = document.querySelector('#next')
+
+        nextB.addEventListener('click', ()=>{
+            img_tags[index].style.display = "none"
+            index = index < img_tags.length-1 ? index+1 : 0 
+            img_tags[index].style.display = "block"
+            img_tags[index].style.animation = "fadein 3s"
+
+        })
+
+        // 4. 왼쪽 버튼 이벤트 등록 => 현재 위치를 기준으로
+        // 현재 이미지 display none, 이전 이미지 display block
+        let prevB = document.querySelector('#prev')
+
+        prevB.addEventListener('click', ()=>{
+            img_tags[index].style.display = "none"
+            index = index > 0 ? index-1 : img_tags.length-1
+            img_tags[index].style.display = "block"
+            img_tags[index].style.animation = "fadein 3s"
+        })
+        
+        
+        
+    </script>
+</body>
+</html>

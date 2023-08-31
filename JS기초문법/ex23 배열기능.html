@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let member = ["민지", "하니", "다니엘", "혜인", "해린"];
+        member.push("미나");
+        member.push("채원", "영지");
+
+        member.pop(); // 마지막 값 삭제
+
+        console.log(member); // ['민지', '하니', '다니엘', '혜인', '해린', '미나', '채원']
+
+        console.log(member.includes("민지")); // true
+        console.log(member.includes("신동")); // false
+
+        // slice : 배열의 적힌 숫자의 인덱스만큼 array형태(배열)로 반환
+        // 0,2 -> 0~1
+        console.log(member.slice(0,2));
+        console.log(member); // ['민지', '하니']
+
+        // splice(제거 시작 인덱스, 제거 개수, 대체할 값) : 
+        member.splice(1,2, "해도"); // 1번째 인덱스 - 하니 부터 2개 ==> 하니, 다니엘 지우고 해도 넣기
+        console.log(member); // ['민지', '하니', '다니엘', '혜인', '해린', '미나', '채원']
+
+        // indexOf : 해당 값이 존재하는 index의 위치를 알려줌
+        console.log(member.indexOf("해린")) // 3
+    </script>
+</body>
+</html>

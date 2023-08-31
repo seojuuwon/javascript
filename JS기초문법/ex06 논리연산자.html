@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let num1 = 10;
+        let num2 = 20;
+        let num3 = 30;
+        let num4 = 40;
+        // And (그리고)
+        // 좌항과 우항의 값이 둘 다 true일 때만 결과가 true
+        // 하나라도 false 나온다면 결과는 false
+
+        console.log(num1 < num2 && num3 < num4);
+        console.log(num1 > num2 && num3 < num4);
+
+
+        // Or (또는)
+        // 좌항 또는 우항 하나라도 true라면 결과는 true
+        // 좌항 우항 둘 다 false일 때만 결과 false
+        console.log(num1 > num2 || num3 < num4);
+
+        
+        // Not 연산자
+        // boolean type의 결과를 반대로 뒤집는 것
+        // (변수명에 is붙이면 boolean)
+        let isCheck = true;
+        console.log(!isCheck); 
+
+    </script>
+</body>
+</html>

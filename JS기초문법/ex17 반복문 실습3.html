@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 공포의 별찍기 1탄
+        // *
+        // **
+        // ***
+        // ****
+        // *****
+
+        // for(let i = 1; i <=5; i++) {
+        //     for(let j = 1; j <= i; j++){
+        //         document.write("★");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+        // 공포의 별찍기 2탄
+        // *****
+        // ****
+        // ***
+        // **
+        // *
+        // for(let i = 5; i >= 1; i--) {
+        //     for(let j = 1; j <= i; j++){
+        //         document.write("★");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // 공포의 별찍기 3탄
+        //     *
+        //    **
+        //   ***
+        //  ****
+        // *****
+        // for(let i = 0; i < 5; i++){
+            
+        //     for(let k = 4; k > i; k--){
+        //         document.write(" ");
+        //     }
+            
+        //     for(let j = 0; j <= i; j++){
+        //         document.write("*");
+        //     }
+        //      document.write("<br>");
+        // }
+
+        // // 선생님 답
+        // for (let i = 0; i < 5; i++) {
+        //     // 띄어쓰기 반복문
+        //     for (let j = 5; j > i; j--) {
+        //         document.write('&nbsp');
+        //     }
+            
+        //     // 별찍는 반복문
+        //     for (let j = 0; j <= i; j++){
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+        
+        // 콘솔로 출력
+        let i = 0; // 전역변수 or let i = 0;이 for문 안에 있으면 지역변수
+        for (i = 0; i < 5; i++){
+            let star = ""
+            let space = ""
+
+            for(let j = 5; j > i; j--){
+                space += " " // space
+            }
+
+            for(let j = 0; j <= i; j++){
+                star += "*"
+            }
+            console.log(space+star);
+        }
+
+
+    </script>
+</body>
+</html>

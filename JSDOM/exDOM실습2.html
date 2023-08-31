@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input id="inputNum">
+    <button onclick="check">확인</button>
+    <h1 id="number"></h1> -->
+
+    <input id="myNum">
+    <button onclick="checkNum()">확인</button>
+    <h1 id="fail"></h1>
+
+    <script>
+        // 1. 1~30까지의 랜덤수 생성
+        // 2. 사용자는 input태그에 생각한 값을 입력한다.
+        // 3. 맞았다면 alert("성공")
+        // 4. 틀리면 h1태그로 사용자가 입력한 내용이 누적해서 출력
+
+        // 내 답ㅋㅋ
+        // let num = parseInt(Math.random()*30)+1;
+        // let n = [];
+        // const check = () => {
+        //     let inputNum = document.getElementById("inputNum").value
+            
+        //     if(num == inputNum){
+        //         alert("성공")
+        //     } else {
+        //         n.push(inputNum)
+        //     }
+        //     document.getElementById("number").innerText = n
+        // }
+        
+
+        // 선생님 답
+        let ranNum = parseInt(Math.random()*30)+1
+        
+        const checkNum = () => {
+            let inputNum = document.getElementById("myNum").value
+            if(ranNum == inputNum){
+                alert('성공')
+            } else {
+                // document.getElementById("fail").innerText += inputNum
+                let h = document.getElementById("fail")
+                // h.innerText = h.innerText + inputNum
+                h.innerText += inputNum + "\u00a0"
+            }
+        }
+    </script>
+</body>
+</html>

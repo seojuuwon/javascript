@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Stack - 제한적으로 접근할 수 있는 나열구조(배열)
+        // 선입후출 (먼저 들어간게 나중에 나옴) FILO (first in last out)
+        
+        let array = [] // 입력할 데이터가 저장될 공간(Stack구조)
+        let idx = 0; // 현재 배열의 개수를 알고있는 변수
+        
+        let push = (data) => {
+            array[idx] = data;
+            idx++;
+        }
+
+        let pop = () => {
+            let result = array[idx-1];
+
+            let temp = array;
+            array = [];
+            let tmpIdx = 0;
+
+            for(let i = 0; i <= idx-2; i++){
+                array[i] = temp[i];
+            }
+            idx--; // 
+            return result;
+            
+        }
+        // 1.입력(push) 2.출력(pop) 3.확인(array) 4.종료
+                while(true){
+
+            let menu = parseInt(prompt("1.입력(push) 2.출력(pop) 3.확인(array) 4.종료"));
+
+            if(menu === 1){
+                let data = prompt("데이터 입력");
+                push(data);
+                // 문제.
+                // push 함수를 정의하시오
+                // push 함수는 data를 받아서 array 가장 마지막에 데이터를 넣습니다.
+                // 단, array.push(data) 사용 불가능
+                // 힌트. 현재 배열 안에 몇개를 저장하고 있는지 알 수 있는 변수가 추가로 필요하다.
+
+            } else if(menu === 2){
+                let result = pop();
+                console.log(result);
+
+                // 문제1. 현재 있는 배열의 마지막 값을 반환해주세요.
+                
+            } else if(menu === 3){
+                alert(array)
+            } else if(menu === 4){
+                alert("프로그램을 종료합니다.");
+                break;
+            } else {
+                alert("정확한 숫자를 입력해주세요.");
+            }
+
+        }
+
+    </script>
+</body>
+</html>

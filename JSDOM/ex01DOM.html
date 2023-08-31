@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 신나는 화요일 </h1>
+    <h1> 오늘 점심 뭐 먹지 </h1>
+
+    <script>
+        // ** Javascript에서 요소를 다룰 때 맨 먼저 해야할 일은 해당하는 요소를 가져오는 것이다. **
+
+        // DOM -> html에 있는 요소를 Javascript에서 사용할 수 있도록 객체로 변환한 것.
+        // document.querySelector --> 선택자를 통해서 검색된 요소 중 맨 처음 요소 하나만 가져온다.
+        let h1 = document.querySelector("h1")
+
+        // document.querySelector("h1") --> h1태그
+        h1.style.color="red"
+        // console.log(document.querySelector("h1"))
+
+        // 클릭했을 때 글씨 색 바꾸기
+        h1.addEventListener('click', function(){
+            h1.style.color="green"
+            document.write("Test") // 문서 구조가 바뀌기 때문에 자주 사용하지는 않음
+            console.error("Test") // 에러에 test 문구가 뜸
+        })
+
+        // 마우스를 올렸을 때 글씨 색 바꾸기
+        h1.addEventListener('mouseover', function(){
+            h1.style.color="yellow"
+        })
+
+        // document.querySelectorAll --> 선택자로 검색된 모든 요소를 **배열**로 담아서 가져온다.
+        let hArray = document.querySelectorAll("h1")
+        for (let i = 0; i< hArray.length; i++){
+            hArray[i].style.color = "orange"
+        }
+
+        // console.log(document.querySelectorAll("h1"))
+    </script>
+</body>
+</html>

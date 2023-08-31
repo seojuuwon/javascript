@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN 방식으로 압축되지 않은 버전 jquery라이브러리 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <button id="btn1">click</button>
+    <input id="input1" type="text">
+    <h1>마우스를 올리셨군요🐹</h1>
+
+    <input id="pw" type="password">
+    <span id="pw_msg"></span>
+    <br>
+
+    <button id="add_button">버튼 추가</button>
+    <div id="btn_area"></div>
+
+    <script>
+        $('#btn1').on('click', ()=>{
+            console.log("hello")
+        })
+        $('#input1').on('focus', ()=>{ // 입력하려고 감지
+            console.log("focus")
+        })
+        $('#input1').on('keydown', ()=>{ // 키보드가 눌러질 때 발생
+            console.log("keydown")
+        })
+
+        
+        // 실습1. 마우스를 올렸을 때 색 변경
+        // $('h1').on('mouseover', ()=>{
+        //     $('h1').css('color', 'red')
+        // })
+        $('h1').on('mouseenter', ()=>{
+            $('h1').css('color', 'red')
+        }).on("mouseleave", ()=>{
+            $('h1').css('color', 'black')
+        })
+
+
+        // 실습2. 키보드 이벤트
+        // 1. input tag에 값이 입력되는 이벤트 감지
+        // 2. input tag에 있는 값 검증(10자리 이상)
+        // 3. input tag 오른쪽에 결과 출력(안전한 비밀번호 or 보안을 늘려주세요)
+        // keydown 들어가는 시점, keyup 나오는 시점(모든 키보드 감지함), keypress 행위 자체를 감지함 = ctrl, shift, del, 화살표 등 특수 키 인지 못함
+        
+        $('#pw').on('keyup', ()=>{
+            if($('#pw').val().length >= 10){
+                $('#pw_msg').text('안전한 비밀번호입니다.')
+            } else {
+                $('#pw_msg').text('비밀번호 보안을 늘려주세요.')
+            }
+        })
+
+        // on 동시에 여러 이벤트를 등록할 수 있음
+        // click 하나하나씩 등록해줘야함
+
+        // 이벤트를 직접 등록하지 않고 on으로 할 경우 장점
+        // 1. 여러 이벤트를 한번에 등록할 수 있다.
+        // - 객체 표현 방식으로 한번에 등록(ppt참고)
+        // - 함수 체이닝 방식으로 한번에 등록
+        // 2. 이벤트 동적 바인딩
+        // (나중에 버튼이 들어와도 실행될 수 있게 하는 게 동적 바인딩)
+        $('#add_button').click(()=>{
+            $('#btn_area').append(`
+                <button class="newBtn">신규버튼</button>
+            `)
+        })
+
+        // 새로운 버튼이 DOM에 구성이 안되어서 동작을 안 함
+        // $('.newBtn').click(()=>{
+        //     console.log("newBtn")
+        // })
+
+        // on을 이용한 동적 바인딩
+        $('#btn_area').on('click', '.newBtn', ()=>{
+            console.log("newBtn")
+        })
+    </script>
+</body>
+</html>

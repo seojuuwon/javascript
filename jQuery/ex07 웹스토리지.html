@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. localStorage와 sessionStorage
+        // localStorage -> 브라우저에서 페이지 구분 없이 데이터 관리
+        // sessionStorage -> 페이지별로 구분하여 데이터 관리
+        
+        // 2. 데이터 저장
+        localStorage.setItem("name", "sjw")
+        localStorage.setItem("id", "juwon")
+
+        // 3. 데이터 읽기
+        let name = localStorage.getItem("name")
+        console.log(name)
+
+        // 4. 데이터 수 확인
+        console.log(localStorage.length) // 2
+
+        // 5. 특정 데이터 삭제
+        localStorage.removeItem('name')
+        name = localStorage.getItem("name")
+        console.log(name) // null
+
+        // 6. 모든 데이터 삭제
+        localStorage.clear()
+        console.log(localStorage.length) // 0
+
+        // 7. 주의사항
+        // - 웹스토리지에는 문자열 형태로만 저장 가능
+        // - 다른 데이터타입은 문자열로 변환되어 저장
+        localStorage.setItem("age", 100)
+        localStorage.setItem("obj", {name:1, age:2})
+
+        let age = localStorage.getItem("age")
+        console.log(typeof(age)) // string
+        let obj = localStorage.getItem("obj")
+        console.log(typeof(obj)) // string
+        console.log(obj) // [object Object]
+
+        // JSON = 객체를 저장할 때는 JSON 포맷으로 변경하여 저장!!!
+        // CSV = 배열을 저장할 때는 CSV 포맷으로 변경하여 저장!!!
+
+    </script>
+</body>
+</html>

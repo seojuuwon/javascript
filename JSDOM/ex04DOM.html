@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">오늘은 야근</h1>
+    <input id="inputText">
+    <button onclick="chText()">바뀌자</button>
+
+    <script>
+        // let data = document.getElementById("inputText").value --> 함수 안에 넣어야함
+        const chText = () => {
+
+            // innerHTML -> 태그 전체를 다룰 때 사용
+            // innerText -> 태그 안에 있는 CONTENT
+            // document.getElementById("title").innerText = "오늘은 칼퇴" 
+            document.getElementById("title").innerHTML = "<h1>오늘은 칼퇴</h1>"
+
+            // input 태그 값 가져오기
+            // document.getElementById("inputText").value
+            console.log(document.getElementById("inputText").value)
+            // console.log(data) // 시행순서.. 웅앵 먼말이지.. 230620 4교시 수업
+        }
+    </script>
+</body>
+</html>

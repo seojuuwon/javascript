@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN 방식으로 압축되지 않은 버전 jquery라이브러리 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <ul>
+        <li>햄버거</li>
+        <li>피자</li>
+        <li>치킨</li>
+    </ul>
+    <span>hello world!!!</span>
+    <div id="abc"></div>
+    <button id="btn1">클릭</button>
+    <input id="input1" type="text">
+    <span></span>
+    <button id="btn2">이미지</button>
+    <img src="">
+    <script>
+        // 1. 태그 가져오기
+        // $를 인식할 수 없는 에러 -> 라이브러리 추가했는지 생각해볼 것.
+        let li_tags = $('li');
+        console.log(li_tags);
+
+        li_tags.css('color', 'red');
+
+        // 동작메소드
+        // 2. 텍스트 가져오기 / 변경하기
+        // JS -> innerText
+        // jquery -> text()
+        let span_tag = $('span');
+        // 값 가져오기
+        console.log(span_tag.text());
+        // 값 변경하기
+        span_tag.text("안녕하세요!!");
+
+        // 3. HTML contents 수정하기
+        // JS -> innerHTML
+        // jquery -> html()
+        let abc = $('#abc');
+        abc.html('<p>바나나</p>')
+
+        // 4. 이벤트 등록
+        // JS -> addEventListener
+        // jquery -> click()
+        let btn1 = $('#btn1');
+        btn1.click(()=>{
+            console.log("click!!!1")
+
+            // 5. input 태그 값 가져오기
+            // JS -> value
+            // jquery -> val()
+            let input1 = $('#input1');
+            let v = input1.val();
+            $('input + span').text(v)
+        });
+
+        // 6. css 변경하기
+        // 반복문 없이 여러개를 쓸 수 있다는 장점
+        $('span').css('color', 'orange');
+
+        // 7. 속성 변경하기
+        $('#btn2').click(()=>{
+            $('img').attr('src', './img/images.png')
+        })
+        
+        // 8. HTML문서준비가 되었을 때
+        // DOM구성이 완료되었을 때 jQuery를 실행
+        // ㄴ jQuery를 하단부에 적으면 댐
+        $(document).ready(function(){
+            console.log("ready")
+        })
+    
+    </script>
+</body>
+</html>

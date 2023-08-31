@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN 방식으로 압축되지 않은 버전 jquery라이브러리 가져오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <style>
+        img{
+            width: 400px;
+        }
+
+        #orange_heart{
+            display: none;
+        }
+
+        #reply_input_area{
+            width: 400px
+        }
+
+        #reply_input_area{
+            width: 330px
+        }
+
+    </style>
+</head>
+<body>
+    <img src="./img/img.png">
+    <div>
+        <span id="white_heart">🤍</span>
+        <span id="orange_heart">🧡</span>
+    </div>
+    <div id="reply_input_area">
+        <input id="reply" type="text">
+        <button>전송</button>
+    </div>
+    <div id="reply_area">
+
+    </div>
+
+    <script>
+        // 종합실습
+        // 1. 하트 토글 기능
+        let isLike = false;
+        $('#heart_area').on('click', ()=>{
+            console.log('like')
+            // display 속성을 none과 inline이 번갈아가며 바뀌도록 함
+            // 하얀하트 -> none / 빨간하트 -> inline
+            // 하얀하트 -> inline / 빨간하트 => none
+
+            if ($('#white_heart').css()){
+
+            }
+        })
+        
+        // 2. 댓글 추가 기능
+        $('#reply_input_area > button').on('click',()=>{
+            console.log('dd')
+            // input 태그 값을 가져와서 #reply_area에 추가하기
+            let reply = $('#reply_input_area > #reply');
+            let r = reply.val()
+            console.log(r)
+
+            $('#reply_area').text(r)
+
+        })
+    </script>
+    
+</body>
+</html>

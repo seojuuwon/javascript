@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #shape{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="shape"></div>
+    <button onclick="btn1()">원</button>
+    <button onclick="btn2()">직사각형</button>
+
+    <script>
+        let div = document.querySelector("#shape")
+        // let div = document.getElementById("shape") 무조건 id만 받을거라서 # 적을 필요 없음
+        // getElementsByName(name), TagName(tagname), ClassName(class)은 HTMLCollection(유사배열) 객체 반환
+        // getElementById(id) -> HTMLElement 객체 반환
+        
+        const btn1 = () => {
+            div.style.width="100px"
+            div.style.borderRadius="50%"
+            div.style.backgroundColor="orange"
+        }
+
+        const btn2 = () => {
+            div.style.borderRadius="0%"
+            div.style.backgroundColor="tomato"
+            div.style.width="200px"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            map => for문, while문을 대체할 수 있음
+            arr[0] => 인덱스를 직접 제어해서 값이 접근할 필요가 x
+        */
+        const names = ['황해도', '선영표', '정봉균']
+
+        for (let index = 0; index < names.length; index++) {
+            const element = names[index];
+            console.log(element)
+        }
+
+        const myPrint = item=>console.log(item)
+        names.map(myPrint)
+        // names.map(item=>console.log(item))  // 1급 객체
+
+        // foreach vs map
+        // - foreach는 결과값을 return x
+        // - map은 결과값을 return O
+
+        // 각 요소 뒤에 선생님을 붙여서 배열을 만들자
+        names2 = []
+        names.forEach(element => {
+            names2.push(element+'선생님')
+        });
+        console.log(names2)
+
+        const names3 = names.map(item => item + '선생님')
+        console.log(names3)     // map은 리턴이 생략되어도 리턴값이 나온다.
+
+        // BMI 계산기
+        // 계산공식 => kg / (m * m)
+
+        const data = [
+            {name : "홍길동", weight : 70, height : 170},
+            {name : "김아라", weight : 50, height : 165},
+            {name : "사만다", weight : 43, height : 180},
+        ]
+
+        // data.map(item => {})에서 {}가 있으면 리턴을 명시해야댐. 
+        // const BMI_arr = data.map(item =>
+        //     // item.weight / (item.height * 0.01 * item.height * 0.01)
+        //     item['weight'] / ((item['height']/100) ^ 2)
+        // )
+
+        // BMI와 나머지 요소들을 같이 리턴
+        const BMI_arr = data.map(item =>{
+            return {
+                // ...item, // **스프레드 연산자**인데 이걸 안 쓰면 밑에 처럼 다 적어줘야 함.
+                // name : item.name,
+                // weight : item.weight,
+                // height : item.height,
+                ...item,
+                height : item['height']/100,    // 따로 빼서 수정 가능
+                BMI : item['weight'] / ((item['height']/100) ^ 2)
+            }
+        })
+        console.log(BMI_arr)
+
+</script>
+</body>
+</html>

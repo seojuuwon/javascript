@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 비교연산자
+        // 변수의 값을 비교하기 위해 사용되는 연산자
+        // 결과값은 반드시 true or false
+        let num1 = 10;
+        let num2 = 10;
+        let num3 = "10";
+
+        // 자바스크립트에서 ==은 값을 비교하는 연산자(변수 안에 있는 값만 봄)
+        // type까지 같은지 비교하기 위해서는 === <-권장함
+        console.log(num1 === num2);
+        console.log(num1 === num3);
+
+        console.log(num1 > num2);
+        console.log(num1 < num2);
+        console.log(num1 <= num2);
+        console.log(num1 >= num2);
+        console.log(num1 != num2);
+
+        let num4 = 3;
+        let num5 = "3"
+        console.log(num4 != num5);
+        console.log(num4 !== num5); // 자료형이 같은지 확인하는 거여서 값은 같지만 자료형이 다르기 때문에 true
+
+    </script>
+</body>
+</html>

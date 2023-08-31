@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 조건문 : 조건식의 결과에 다라 프로그램의 실행흐름을 변경하는 문법
+        // 단순 if, if-else, 다중 if, switch
+
+        // 1. 단순 if -> 특정 조건에 프로그램이 실행되거나 안되는걸 제어
+        // 아이디 입력 폼에 값이 안 들어있는 경우를 검사
+        // let id = prompt("아이디를 입력해주세요");
+
+        // if (id === '') { // 아이디가 비어있을 경우
+        //     alert("아이디를 입력해주세요");
+        // }
+
+        // // if-else -> 조건식이 참인 경우와 거짓인 경우 모두 제어
+        // // 비밀번호 입력 -> 최소 8자리 이상
+        // let pw = prompt("비밀번호를 입력해주세요");
+
+        // // if (pw.length >= 8) {
+        // //     alert("안전한 비밀번호입니다.");
+        // // } else {
+        // //     alert("비밀번호를 8자리 이상 설정해주세요.");
+        // // }
+
+        // // 조건 연산자로 변경
+        // pw = pw.length >= 8 ? alert("안전한 비밀번호입니다.") : alert("비밀번호를 8자리 이상 설정해주세요.");
+
+        
+        // 3. 다중 if -> 2개 이상의 조건을 검사하는 경우
+        // 조건 1. 8자리 이상 -> 약간 안전한 비밀번호
+        // 조건 2. 15자리 이상 -> 매우 안전한 비밀번호
+
+        let pw = prompt("비밀번호 입력해주세요.");
+        if(pw.length >= 15) {
+            alert("매우 안전한 비밀번호입니다.");
+        } else if(pw.length >= 8) {
+            alert("약간 안전한 비밀번호입니다.");
+        } else {
+            alert("비밀번호를 8자리 이상 설정해주세요.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let star = [3, 5, 7, 9, 2];
+        // Web Page 출력 예시
+        // 3 : ★★★
+        // 5 : ★★★★★
+        // 7 : ★★★★★★★
+        // 9 : ★★★★★★★★★
+        // 2 : ★★
+
+        for (let i=0; i<star.length; i++){
+            document.write(star[i] + " : ");
+            for (let j=0; j<star[i]; j++){
+                document.write(("★"));
+            }
+            document.write("<br>");
+        }
+
+
+        // // 선생님 답
+        // let star = [3, 5, 7, 9, 2];
+        
+        // for(let i=0; i<star.length; i++){ // 배열을 순환하는 반복문
+        //     document.write(`${star[i]} : `)
+        //     for(let j=0; j<star[i]; j++){
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+    </script>
+</body>
+</html>

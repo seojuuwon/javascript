@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Cat{
+            constructor(name, race){
+                this.name = name
+                this.race = race
+                this.stress = 0
+                this.hungry = 0
+            }
+            touch(part){
+                if(part == '엉덩이'){
+                    stress -= 20
+                } else if(part == '배'){
+                    stress += 50
+                }
+            }
+            feed(food){
+                if(food == '츄르'){
+                    stress -= 20
+                    hungry += 50
+                } else if(food == '사료'){
+                    stress += 5
+                    hungry += 30
+                }
+            }
+        }
+
+        const cat1 = new Cat('치즈', '길거리 고양이')
+        cat1.touch('엉덩이')
+        
+        const cat2 = new Cat('점박이', '스핑크스')
+        cat1.touch('배')
+    </script>
+</body>
+</html>
